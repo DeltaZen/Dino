@@ -467,8 +467,8 @@ function init() {
                 this.playingIntro = true;
                 this.tRex.playingIntro = true;
 
-                var box = document.getElementById("messageBox");
-                box.style.visibility="hidden";
+                document.getElementById("messageBox").style.visibility="hidden";
+                document.getElementById("scoreboard").style.visibility="hidden";
 
                 // CSS animation definition.
                 var keyframes = '@-webkit-keyframes intro { ' +
@@ -2748,12 +2748,13 @@ function init() {
                 this.dimensions.WIDTH));
         }
     };
+
+    function onDocumentLoad() {
+        new Runner('.interstitial-wrapper');
+    }
+    document.addEventListener('DOMContentLoaded', onDocumentLoad);
 };
 
-function onDocumentLoad() {
-    new Runner('.interstitial-wrapper');
-}
 
 window.focus();
-window.highscores.init("Dino").then(init);
-document.addEventListener('DOMContentLoaded', onDocumentLoad);
+window.highscores.init("Dino", "scoreboard").then(init);
