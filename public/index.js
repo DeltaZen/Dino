@@ -2754,5 +2754,6 @@ function onDocumentLoad() {
     new Runner('.interstitial-wrapper');
 }
 
+window.focus();
 window.highscores.init("Dino").then(init);
 document.addEventListener('DOMContentLoaded', onDocumentLoad);
