@@ -2,7 +2,8 @@
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -19,14 +20,16 @@ html, body {
 }
 
 .icon-offline {
-  content: -webkit-image-set( url(assets/100-error-offline.png) 1x, url(assets/200-error-offline.png) 2x);
+  content: -webkit-image-set(
+    url(assets/100-error-offline.png) 1x,
+    url(assets/200-error-offline.png) 2x
+  );
   position: relative;
 }
 
 .hidden {
   display: none;
 }
-
 
 /* Offline page */
 
@@ -60,7 +63,7 @@ html, body {
 }
 
 .offline .controller {
-  background: rgba(247, 247, 247, .1);
+  background: rgba(247, 247, 247, 0.1);
   height: 100vh;
   left: 0;
   position: absolute;
@@ -70,7 +73,8 @@ html, body {
 }
 
 @media (max-width: 420px) {
-  .suggested-left > #control-buttons, .suggested-right > #control-buttons {
+  .suggested-left > #control-buttons,
+  .suggested-right > #control-buttons {
     float: none;
   }
   .snackbar {
@@ -103,7 +107,7 @@ html, body {
   }
 }
 
-@media (min-width: 420px) and (max-width: 736px) and (min-height: 240px) and (max-height: 420px) and (orientation:landscape) {
+@media (min-width: 420px) and (max-width: 736px) and (min-height: 240px) and (max-height: 420px) and (orientation: landscape) {
   .interstitial-wrapper {
     margin-bottom: 100px;
   }
@@ -164,9 +168,9 @@ html, body {
 }
 
 #messageBox {
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    color: #535353;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color: #535353;
 }
 
 /* scoreboard */
@@ -186,8 +190,8 @@ html, body {
 }
 
 .score-row.you {
-    background: #535353;
-    color: #fff;
+  background: #535353;
+  color: #fff;
 }
 
 .row-pos {

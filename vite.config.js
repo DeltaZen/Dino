@@ -9,7 +9,6 @@ const manifest = toml.parse(readFileSync("./public/manifest.toml", "utf-8"));
 let name = manifest.name || "app";
 let version = manifest.version ? "_" + manifest.version : "";
 
-
 function eruda(debug = undefined) {
   const erudaSrc = readFileSync("./node_modules/eruda/eruda.js", "utf-8");
   return {
@@ -59,11 +58,11 @@ function inject(path) {
           tag: "script",
           children: scriptSrc,
           injectTo: "head",
-        }
+        },
       ];
       return {
-          html,
-          tags,
+        html,
+        tags,
       };
     },
   };
