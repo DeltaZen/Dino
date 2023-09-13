@@ -48,32 +48,11 @@ function eruda(debug = undefined) {
   };
 }
 
-function inject(path) {
-  const scriptSrc = readFileSync(path, "utf-8");
-  return {
-    name: "vite-plugin-inject",
-    transformIndexHtml(html) {
-      const tags = [
-        {
-          tag: "script",
-          children: scriptSrc,
-          injectTo: "head",
-        },
-      ];
-      return {
-        html,
-        tags,
-      };
-    },
-  };
-}
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     legacy({ renderModernChunks: false }),
     eruda(),
-    inject("./node_modules/webxdc-scores/dist/webxdc-scores.umd.js"),
     zipPack({
       outDir: "dist-xdc",
       outFileName: name + version + ".xdc",
