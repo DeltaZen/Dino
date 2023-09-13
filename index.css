@@ -69,10 +69,6 @@ html, body {
   z-index: 1;
 }
 
-#offline-resources {
-  display: none;
-}
-
 @media (max-width: 420px) {
   .suggested-left > #control-buttons, .suggested-right > #control-buttons {
     float: none;
