@@ -12,6 +12,12 @@ After cloning this repo, install dependecies:
 pnpm i
 ```
 
+### Checking the code format
+
+```
+pnpm format:check
+```
+
 ### Testing the app in the browser
 
 To test your work in your browser (with hot reloading!) while developing:
