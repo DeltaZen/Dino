@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import "webxdc-scores";
+import "@webxdc/highscores";
 
 /**
  * T-Rex runner.
@@ -2874,6 +2874,13 @@ Horizon.prototype = {
 };
 
 window.focus();
-window.highscores.init("Dino", "scoreboard").then(() => {
-  new Runner(".interstitial-wrapper");
-});
+const scoreboard = document.getElementById("scoreboard");
+window.highscores
+  .init({
+    onHighscoresChanged: () => {
+      scoreboard.innerHTML = window.highscores.renderScoreboard().innerHTML;
+    },
+  })
+  .then(() => {
+    new Runner(".interstitial-wrapper");
+  });
